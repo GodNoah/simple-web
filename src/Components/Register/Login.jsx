@@ -1,11 +1,11 @@
-import React, { useState } from 'react'
+import React from 'react'
+import { useState } from 'react'
+import style from'../Style/Register.module.css'
 import { Link } from 'react-router-dom'
 
-import style from '../Style/Register.module.css'
-function Register() {
+function Login() {
     const [formData, setFormData] = useState(
-        {
-            user: '', 
+        { 
             email: '',
             password: '',  
         }
@@ -16,6 +16,8 @@ function Register() {
     })
     const formHandle = (e) => {
          e.preventDefault();
+
+    
 
          
 
@@ -33,23 +35,25 @@ function Register() {
         setFormDataError({...formDataError, email: false})
       }
     }
+
   return (
     <div>
-    <form className={style.form}>
-            <input type='text' value={formData.user} name='user' placeholder='User Name' onChange={handleChange}  />
-            <input type='email' value={formData.email} name='email' placeholder='email' onChange={handleChange} onBlur={handleEmailBlur} />
+    <form className={style.form} onSubmit={formHandle}>
+               <input type='email' value={formData.email} name='email' placeholder='email' onChange={handleChange} onBlur={handleEmailBlur} />
             {formDataError.email && (
                 <p style={{ color: 'red', transition: '0.4s ease-in' }}>Email must include '@' symbol</p>
               )}            
             <input type='password' value={formData.password} name='password' placeholder='password' onChange={handleChange} />
 
-            <p>Already have an account? <Link to="/login">Log in</Link> </p>
+            <p>New Here? <Link to="/register">Log in</Link> </p>
 
             <button >Submit</button>
     </form>
 
     </div>
   )
+  
 }
 
-export default Register
+export default Login
+

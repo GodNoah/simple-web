@@ -1,9 +1,17 @@
 import React from 'react'
+import '../Style/Profile.css'
 
 function Profile() {
   return (
-    <div>
+    <div class="profile">
+    <form>
     <h1>Profile</h1>
+        
+    </form>
+
+
+
+
       
     </div>
   )

@@ -14,7 +14,7 @@ function Navbar() {
         <Link className={style.link} to='/'>Home</Link>
         <Link className={style.link} to='/about'>About</Link>
         <Link className={style.link} to='/products'>Products</Link>
-        <Link className={style.link} to='/products'>Profile</Link>
+        <Link className={style.link} to='/profile'>Profile</Link>
       </ul>
     
       
